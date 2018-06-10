@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour {
-
+public class PlayerInput : MonoBehaviour
+{
     float diagonalRatio = 1 / Mathf.Sqrt(2);
 
     public float movementSpeed = 1.0f;
@@ -53,12 +53,11 @@ public class PlayerInput : MonoBehaviour {
         // Adding multipliers
         verticalMove *= movementSpeed * Time.deltaTime;
         horizontalMove *= movementSpeed * Time.deltaTime;
-        rotation *= rotationSpeed * Time.deltaTime;// * Mathf.Sign(vertical);
+        rotation *= rotationSpeed * Time.deltaTime;
 
         // Moving and rotating the character
         transform.Translate(horizontalMove, verticalMove, 0.0f);
         transform.Rotate(0.0f, 0.0f, rotation);
-
 	}
 
     void OnCollisionEnter2D(Collision2D col)
@@ -87,5 +86,4 @@ public class PlayerInput : MonoBehaviour {
         GUI.Label(new Rect(10, 40, 100, 10), "MouseX:       " + testMouseX, style);
         GUI.Label(new Rect(10, 55, 100, 10), "MouseRight:  " + testMouseRight, style);
     }
-
 }
